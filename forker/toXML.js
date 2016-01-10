@@ -6,7 +6,7 @@ module.exports = function(options, callback) {
       encoding: 'UTF-8',
       "xml:lang": "ko",
       "xmlns": "http://www.mediawiki.org/xml/export-0.10/",
-      "xmlns:nsi": "http://www.w3.org/2001/XMLSchema-instance",
+      "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
       "xsi:schemaLocation": "http://www.mediawiki.org/xml/export-0.10/ http://www.mediawiki.org/xml/export-0.10.xsd"
     };
     // create xml root and set attributes
@@ -35,7 +35,7 @@ module.exports = function(options, callback) {
       "key": 10,
       "text": "틀"
     }];
-    var namespaces = siteinfo.ele("namespace");
+    var namespaces = siteinfo.ele("namespaces");
     namespaces.ele("namespace").att("key", "0");
     for (var i of namespaceMap) {
       namespaces.ele("namespace").att("key", i.key).text(i.text);
