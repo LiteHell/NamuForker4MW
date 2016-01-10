@@ -1,6 +1,7 @@
 // require modules
 var readline = require('readline');
 var chalk = require('chalk');
+var fs = require('fs');
 
 // create readline interface
 var rl = readline.createInterface({
@@ -40,8 +41,10 @@ exports.logError = function(message) {
   if (doExit) process.exit(-1);
 }
 exports.logDebug = function(message) {
-  var header = chalk.bgWhite.black("[디버그]")
-  console.log(header + " " + message);
+  fs.writeFileSync("./debug.log", typeof message !== "string" ? JSON.stringify(message) + "\n" : message + "\n", {
+    encoding: 'utf8',
+    flag: 'a'
+  });
 }
 exports.logWarn = function(message) {
   console.log(chalk.yellow("[경고]") + " " + message);

@@ -4,6 +4,9 @@ var logger = require("./logger.js");
 var forker = require("./forker");
 var fs = require('fs');
 
+// write debug
+logger.logDebug("\n\n Logging started at " + new Date().toString());
+
 // start
 logger.logInfo("만든이 : LiteHell");
 logger.logInfo("만든이 이메일 : LiteHell@openmailbox.org");
