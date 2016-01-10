@@ -22,11 +22,13 @@ module.exports = function(options, callback) {
       }
       if (res.statusCode == 403) {
         logger.logDebug("getting raw, secret revision " + revision.revisionNo);
+        logger.logProcessing(revision.revisionNo + "번째 리버전을 가져오려 했으나 잠긴 리버전이므로 내용 없이 삭제된 판으로 추가합니다.");
         // secret revision
         revision.deleted = true;
         result.push(revision);
       } else if (res.statusCode == 200 || res.statusCode == 304) {
         logger.logDebug("gettting raw, rev " + revision.revisionNo);
+        logger.logProcessing(revision.revisionNo + "번째 리버전을 가져왔습니다.");
         logger.logDebug(body);
         revision.content = body;
         result.push(revision)

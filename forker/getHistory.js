@@ -16,7 +16,7 @@ module.exports = function(options, callback) {
           callback(err, null);
           return;
         }
-        logger.logProcessing("역사를 얻는 중. 리버전 현재 " + (lastRev == null ? "(알 수 없음)" : lastRev) +
+        logger.logProcessing("역사를 가져오는 중. 현재  리버전 " + (lastRev == null ? "(알 수 없음)" : lastRev) +
           "개 남음.");
         var $ = cheerio.load(body);
         var items = $("article ul li");
