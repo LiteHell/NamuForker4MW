@@ -64,7 +64,7 @@ module.exports = function(options, callback) {
       if (i != 0)
         element.ele('parentid').text(options.revisions[i - 1].revisionNo);
       // timestamp
-      element.ele('timestamp').text(revision.timestamp);
+      element.ele('timestamp').text(new Date(revision.timestamp).toISOString());
       // contributor
       var contributor = element.ele('contributor')
       if (revision.isIP)
