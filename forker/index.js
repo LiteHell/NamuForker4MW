@@ -40,7 +40,7 @@ module.exports = function(options, callback) {
   // set Default Headers
   delayedRequest.setDefaultOptions({
     headers: {
-      "User-Agent": "Mozilla 5.0 (compatible; NamuForker4MW 1.0.1)",
+      "User-Agent": "Mozilla 5.0 (compatible; NamuForker4MW 1.0.2)",
       "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
       "Accept-Language": "ko-KR,ko;q=0.8,en-US;q=0.5,en;q=0.3",
       "Accept-Encoding": "utf-8",
