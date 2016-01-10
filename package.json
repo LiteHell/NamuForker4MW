@@ -14,8 +14,8 @@
     "mediawiki",
     "forker"
   ],
-  "author": "UNLICENSED",
-  "license": "GPL-3.0",
+  "author": "LiteHell",
+  "license": "UNLICENSED",
   "dependencies": {
     "chalk": "^1.1.1",
     "cheerio": "^0.19.0",
