@@ -36,11 +36,12 @@ module.exports = function(options, callback) {
   var delayedRequestClass = require('./delayedRequest.js');
   var delayedRequest = new delayedRequestClass(1500);
   var encodedName = encodeURIComponent(options.name);
-
+  var forkerVersion = require("../package.json").version;
+  logger.logDebug("forker Version loaded : " + forkerVersion);
   // set Default Headers
   delayedRequest.setDefaultOptions({
     headers: {
-      "User-Agent": "Mozilla 5.0 (compatible; NamuForker4MW 1.0.3)",
+      "User-Agent": `Mozilla 5.0 (compatible; NamuForker4MW ${forkerVersion})`,
       "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
       "Accept-Language": "ko-KR,ko;q=0.8,en-US;q=0.5,en;q=0.3",
       "Accept-Encoding": "utf-8",

@@ -78,7 +78,8 @@ module.exports = function(options, callback) {
       if (revision.deleted)
         element.ele('text').att('deleted', 'deleted');
       else
-        element.ele('text').text(revision.content);
+        element.ele('text').text(revision.content).att("bytes", revision.content.length);
+
       // comment
       var comment = "";
       if (revision.specialComment.length != 0) {
