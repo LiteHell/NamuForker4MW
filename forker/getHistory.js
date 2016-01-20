@@ -1,5 +1,9 @@
 var cheerio = require('cheerio');
-var contributorPattern = /\/contribution\/(author|ip)\/(.+?)\/document/;
+//var contributorPattern = /\/contribution\/(author|ip)\/(.+?)\/document/;
+var contributorPatterns = {
+  LoginUser: new RegExp(`/w/${encodeURIComponent("사용자")}:(.+)`),
+  ipUser: new RegExp("/contribution/ip/(.+?)/document")
+};
 var logger = require('../logger.js');
 module.exports = function(options, callback) {
   var encodedName = encodeURIComponent(options.name);
@@ -49,11 +53,18 @@ module.exports = function(options, callback) {
             isIP = false,
             isAccount = false;
           var authorAnchor = item.find("strong > a");
-          if (authorAnchor.length == 0) authorAnchor = item.find("a").last();
-          var authorMatches = contributorPattern.exec(authorAnchor.attr("href"));
-          if (authorMatches[1] == "author") isAccount = true;
-          else if (authorMatches[1] == "ip") isIP = true;
-          author = authorMatches[2];
+          if (authorAnchor.length == 0) authorAnchor = item.find("a").last(); // ip 기여자인 경우
+          var hrefAttr = authorAnchor.attr("href");
+          logger.logDebug("got href Attribute : " + hrefAttr);
+          if (contributorPatterns.LoginUser.test(hrefAttr)) {
+            isAccount = true;
+            author = contributorPatterns.LoginUser.exec(hrefAttr)[1];
+          } else if (contributorPatterns.ipUser.test(hrefAttr)) {
+            isIP = true;
+            author = contributorPatterns.ipUser.exec(hrefAttr)[1];
+          } else {
+            throw new Error("IP 기여자/로그인 기여자 여부를 판별할 수 없습니다.")
+          }
           // 객체화
           history.push({
             timestamp: timestamp,
