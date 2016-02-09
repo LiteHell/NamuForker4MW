@@ -1,7 +1,9 @@
 {
   "name": "namuforker4mw",
-  "version": "2.0.0",
-  "engines": {"node": ">=4.2.6"},
+  "version": "2.0.1",
+  "engines": {
+    "node": ">=4.2.6"
+  },
   "description": "forks a article from namuwiki (https://namu.wiki) and saves it in Mediawiki exported xml format.",
   "main": "index.js",
   "bugs": {
