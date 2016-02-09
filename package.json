@@ -16,6 +16,7 @@
     "mediawiki",
     "forker"
   ],
+  "preferGlobal": true,
   "author": {
     "name": "LiteHell",
     "email": "LiteHell@openmailbox.org"
