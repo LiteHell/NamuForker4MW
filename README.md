@@ -7,19 +7,18 @@
 # 설치 방법
 
 ```
-npm install
-npm install-dev
+npm install -g namuforker4mw
 ```
 
 # 사용 방법
 
 ```
-node index.js
+namuforker
 ```
 
 CloudFlare DDoS Protection을 우회하시려면 다음과 같이 하시면 됩니다. (주의 : **reCAPTCHA 뜨면 답 없음**)
 ```
-node index.js --bypass-cf-ddos-protection
+namuforker --bypass-cf-ddos-protection
 ```
 
 # 주의+참고사항
