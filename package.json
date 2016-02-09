@@ -1,6 +1,6 @@
 {
   "name": "namuforker4mw",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "forks a article from namuwiki (https://namu.wiki) and saves it in Mediawiki exported xml format.",
   "main": "index.js",
   "scripts": {
