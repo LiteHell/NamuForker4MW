@@ -2,6 +2,7 @@ var logger = require('../logger.js');
 var getHistory = require('./getHistory.js');
 var getRAW = require('./getRAW.js');
 var toXMLConverter = require('./toXML.js')
+var doesBypassCFDDosProtection = process.argv.indexOf("--bypass-cf-ddos-protection") != -1;
 
 function ifArticleExists(callback, errCallback) {
   return function(err, res, body) {
@@ -53,6 +54,7 @@ module.exports = function(options, callback) {
   delayedRequest.add({
     uri: "https://namu.wiki/raw/" + encodedName
   }, ifArticleExists(function() {
+    logger.logProcessing("문서 존재함.");
     getHistory({
       name: options.name,
       delayedRequest: delayedRequest
