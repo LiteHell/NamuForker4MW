@@ -1,10 +1,12 @@
 {
   "name": "namuforker4mw",
   "version": "2.0.0",
+  "engine": ">=4.2.6",
   "description": "forks a article from namuwiki (https://namu.wiki) and saves it in Mediawiki exported xml format.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bug": {
+    "url": "https://github.com/LiteHell/NamuForker4MW/issues",
+    "email": "LiteHell@openmailbox.org"
   },
   "keywords": [
     "wiki",
@@ -14,7 +16,20 @@
     "mediawiki",
     "forker"
   ],
-  "author": "LiteHell",
+  "author": {
+    "name": "LiteHell",
+    "email": "LiteHell@openmailbox.org"
+  },
+  "files": [
+    "*.js",
+    "forker",
+    "forker/*.js",
+    "package.json",
+    "READMD.md"
+  ],
+  "bin": {
+    "namuforker": "./index.js"
+  },
   "license": "MIT",
   "repository": "https://github.com/LiteHell/NamuForker4MW.git",
   "dependencies": {
