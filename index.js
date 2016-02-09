@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // require modules
 var chalk = require('chalk');
 var logger = require("./logger.js");
