@@ -13,12 +13,12 @@ npm install -g namuforker4mw
 # 사용 방법
 
 ```
-namuforker
+namuforker --articleName="문서명" --saveTo="저장할 곳"
 ```
 
 CloudFlare DDoS Protection을 우회하시려면 다음과 같이 하시면 됩니다. (주의 : **reCAPTCHA 뜨면 답 없음**)
 ```
-namuforker --bypass-cf-ddos-protection
+namuforker --articleName="문서명" --saveTo="저장할 곳" --bypass-cf-ddos-protection
 ```
 
 # 주의+참고사항
